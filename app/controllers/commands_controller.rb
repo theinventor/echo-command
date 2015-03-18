@@ -7,7 +7,7 @@ class CommandsController < ApplicationController
   end
 
   def create
-    puts "CREATE_PARAMS: #{params}"
+    Rails.logger.debug "CREATE_PARAMS: #{params}"
     render text: "OK"
   end
 
