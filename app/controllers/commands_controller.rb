@@ -1,4 +1,5 @@
 class CommandsController < ApplicationController
+  protect_from_forgery except: :create
 
   def index
     puts "INDEX_PARAMS: #{params}"
