@@ -8,6 +8,7 @@ class CommandsController < ApplicationController
 
   def create
     Rails.logger.debug "CREATE_PARAMS: #{params}"
+    puts "CREATE_PARAMS: #{params}"
 
     if params[:session] && params[:session][:new]
       response = {
