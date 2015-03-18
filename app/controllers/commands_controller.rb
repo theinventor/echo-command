@@ -14,13 +14,25 @@ class CommandsController < ApplicationController
           version: '1',
           response: {
               outputSpeech: {
-                  type: "PlainText", text: "Hi Troy, you opened the app!"
+                  type: "PlainText", text: "Hi Troy, you opened the app, ask me to run command one or command two."
+              },
+              shouldEndSession: false
+          }
+      }
+      render json: response and return
+    end
+
+    if params[:session] && params[:request]
+      response = {
+          version: '1',
+          response: {
+              outputSpeech: {
+                  type: "PlainText", text: "Ok - you asked me to run a command!"
               },
               shouldEndSession: true
           }
       }
       render json: response and return
-
     end
 
 
