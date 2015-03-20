@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  name: MyString
+  turn_off: false
+  turn_on: false
+
+two:
+  user_id: 1
+  name: MyString
+  turn_off: false
+  turn_on: false

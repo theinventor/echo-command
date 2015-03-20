@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :commands
-
+  resources :light_switches
 
   # You can have the root of your site routed with "root"
   root 'sessions#index'
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post '/sessions/set_code', to: "sessions#set_code"
   get '/authorize', to: 'sessions#smartthings_authorize'
   get '/oauth/callback', to: 'sessions#smartthings_callback'
+  get "/refresh_switches", to: "sessions#refresh_switches", as: "refresh_switches"
 
   get '/auth/:provider/callback', to: 'sessions#create' #omniauth
 

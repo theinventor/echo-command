@@ -39,6 +39,12 @@ class SessionsController < ApplicationController
     redirect_to root_path, notice: "Ok, we got you authorized to SmartThings too!"
   end
 
+  def refresh_switches
+    s = Smartthingr.new(current_user)
+    LightSwitch.refresh_list(s.get_switches,current_user)
+    redirect_to root_path, notice: "all set!"
+  end
+
 
   protected
 

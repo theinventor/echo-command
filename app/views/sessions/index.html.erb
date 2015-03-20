@@ -8,6 +8,23 @@ Welcome to our site!
             Now lets get us connected to your SmartThings
             <%= link_to "Authorize SmartThings App", "/authorize" %>
         <% end %>
+        <%= link_to "Refresh Switch List", refresh_switches_path %>
+        <table>
+          <thead>
+          <tr>
+            <th>Name of Switch</th>
+            <th>ON with "Lights On" command</th>
+            <th>OFF with "Lights Off" command</th>
+          </tr>
+          </thead>
+          <% current_user.light_switches.order("name ASC").each do |switch| %>
+              <tr>
+                <td><%= switch.name %></td>
+                <td><%= best_in_place switch, :turn_on, as: :checkbox, collection: ["No, thanks", "Yes, of course!"]  %></td>
+                <td><%= best_in_place switch, :turn_off, as: :checkbox, collection: ["No, thanks", "Yes, of course!"]  %></td>
+              </tr>
+          <% end %>
+        </table>
     <% else %>
         Enter the code your Echo gave you here:
         <%= form_for :echo_code, url: "/sessions/set_code" do |f| %>
