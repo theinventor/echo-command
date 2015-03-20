@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  device_id: MyString
+  authentication_id: 1
+  registration_code: MyString
+
+two:
+  device_id: MyString
+  authentication_id: 1
+  registration_code: MyString

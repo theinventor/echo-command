@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
+  devise_for :users
+
+  resources :authentications
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   resources :commands
 
-  # You can have the root of your site routed with "root"
-  root 'commands#index'
 
+  # You can have the root of your site routed with "root"
+  root 'sessions#index'
+
+  post '/sessions/set_code', to: "sessions#set_code"
+
+  get '/auth/:provider/callback', to: 'sessions#create' #omniauth
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
