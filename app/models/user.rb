@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
   def store_oauth_token(token)
     authentication.update(oauth_token: token)
   end
+
+  def oauth_token
+    authentication.oauth_token
+  end
 end
