@@ -6,10 +6,10 @@ Welcome to our site!
         Great, you are all linked up!
         <% if current_user.oauth_token.nil? %>
             Now lets get us connected to your SmartThings
-            <%= link_to "Authorize SmartThings App", "/authorize" %>
+            <%= link_to "Authorize SmartThings App", "/authorize", class: 'btn btn-success' %>
         <% end %>
-        <%= link_to "Refresh Switch List", refresh_switches_path %>
-        <table>
+        <%= link_to "Refresh Switch List", refresh_switches_path, class: 'btn btn-success btn-sm' %>
+        <table class="table">
           <thead>
           <tr>
             <th>Name of Switch</th>
