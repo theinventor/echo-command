@@ -4,6 +4,10 @@ Welcome to our site!
     <%= current_user.nickname %>
     <% if current_user.echo_user %>
         Great, you are all linked up!
+        <% if current_user.oauth_token.nil? %>
+            Now lets get us connected to your SmartThings
+            <%= link_to "Authorize SmartThings App", "/authorize" %>
+        <% end %>
     <% else %>
         Enter the code your Echo gave you here:
         <%= form_for :echo_code, url: "/sessions/set_code" do |f| %>
