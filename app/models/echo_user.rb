@@ -12,4 +12,8 @@ class EchoUser < ActiveRecord::Base
     authentication.try(:name)
   end
 
+  def user
+    authentication.try(:user)
+  end
+
 end
