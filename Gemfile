@@ -46,3 +46,5 @@ end
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'oauth2'
+gem 'faraday'

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   root 'sessions#index'
 
   post '/sessions/set_code', to: "sessions#set_code"
+  get '/authorize', to: 'sessions#smartthings_authorize'
+  get '/oauth/callback', to: 'sessions#smartthings_callback'
 
   get '/auth/:provider/callback', to: 'sessions#create' #omniauth
 

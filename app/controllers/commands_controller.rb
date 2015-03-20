@@ -98,6 +98,8 @@ class CommandsController < ApplicationController
 
   def reply_to_lights
     command = params[:command][:request][:intent][:slots][:Command][:value]
+    s = Smartthingr.new(current_user)
+    s.change_lights(command)
     response = {
         version: '1',
         response: {

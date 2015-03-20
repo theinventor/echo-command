@@ -17,4 +17,12 @@ class User < ActiveRecord::Base
   def echo_user
     authentications.first.try(:echo_user)
   end
+
+  def store_oauth_code(code)
+    authentication.update(oauth_code: code)
+  end
+
+  def store_oauth_token(token)
+    authentication.update(oauth_token: token)
+  end
 end
