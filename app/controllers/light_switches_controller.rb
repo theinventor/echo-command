@@ -1,5 +1,6 @@
 class LightSwitchesController < ApplicationController
   before_action :set_light_switch, only: [:update, :destroy]
+  before_filter :authenticate_user!
 
   def show
     respond_to do |format|
