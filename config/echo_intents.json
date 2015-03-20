@@ -1,0 +1,31 @@
+{
+  "intents": [
+    {
+      "intent": "LightsIntent",
+      "slots": [
+        {
+          "name": "Command",
+          "type": "LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "PresenceIntent",
+      "slots": [
+        {
+          "name": "Command",
+          "type": "LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "RegistrationIntent", "slots": []
+    },
+    {
+      "intent": "ReadyForCodeIntent", "slots": []
+    },
+    {
+      "intent": "DoneWithCodeIntent", "slots": []
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+LightsIntent  turn {on|Command} some lights
+LightsIntent  turn {on|Command} the lights
+LightsIntent  turn {off|Command} the lights
+LightsIntent  turn {off|Command} some lights
+PresenceIntent we are {leaving|Command} now
+PresenceIntent we are {back|Command} now
+PresenceIntent we are {leaving|Command}
+PresenceIntent we are {back|Command}
+PresenceIntent i am {leaving|Command} now
+PresenceIntent i am {back|Command} now
+PresenceIntent i am {leaving|Command}
+PresenceIntent i am {back|Command}
+ReadyForCodeIntent ready for the code
+ReadyForCodeIntent i'm ready for the code
+ReadyForCodeIntent give me the code
+ReadyForCodeIntent i am ready
+DoneWithCodeIntent i have entered the code
+DoneWithCodeIntent i have entered it
