@@ -39,6 +39,10 @@ class CommandsController < ApplicationController
       render json: reply_to_presence and return
     end
 
+    if @intent == "MusicIntent"
+      render json: reply_to_music and return
+    end
+
     if params[:session] && params[:request]
       response = {
           version: '1',
@@ -106,6 +110,26 @@ class CommandsController < ApplicationController
             outputSpeech: {
                 type: "PlainText",
                 text: "Got it - I will turn #{command} the lights now."
+            },
+            shouldEndSession: false
+        }
+    }
+  end
+
+
+  def reply_to_music
+    command = params[:command][:request][:intent][:slots][:Command][:value]
+    switch = params[:command][:request][:intent][:slots][:Speaker][:value]
+    command = command == "play" ? "on" : "off"
+
+    s = Smartthingr.new(@echo.user)
+    worked = s.change_single_switch(switch,command)
+    response = {
+        version: '1',
+        response: {
+            outputSpeech: {
+                type: "PlainText",
+                text: (worked ? "Got it, done." : "Sorry, I had trouble finding a device called #{switch}")
             },
             shouldEndSession: false
         }

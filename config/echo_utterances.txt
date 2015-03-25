@@ -1,7 +1,12 @@
-LightsIntent  turn {on|Command} some lights
-LightsIntent  turn {on|Command} the lights
-LightsIntent  turn {off|Command} the lights
-LightsIntent  turn {off|Command} some lights
+LightsIntent turn {on|Command} some lights
+LightsIntent turn {on|Command} the lights
+LightsIntent turn {off|Command} the lights
+LightsIntent turn {off|Command} some lights
+MusicIntent can you {play|Command} the {Living Room Sonos|Speaker}
+MusicIntent {play|Command} the {Living Room Sonos|Speaker}
+MusicIntent {pause|Command} the {Master Bedroom Sonos|Speaker}
+MusicIntent can you {pause|Command} the {Living Room Sonos|Speaker}
+MusicIntent would you {pause|Command} the {Living Room Sonos|Speaker}
 PresenceIntent we are {leaving|Command} now
 PresenceIntent we are {back|Command} now
 PresenceIntent we are {leaving|Command}

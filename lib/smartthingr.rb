@@ -48,5 +48,14 @@ class Smartthingr
     end
   end
 
+  def change_single_switch(switch,command)
+    light = @user.light_switches.where("name ilike ?","%#{switch}%").first
+    if light
+      r = @conn.post "#{@base_url}#{@st_url}/switch?deviceId=#{light.name}&command=#{command}"
+    else
+      false
+    end
+  end
+
 
 end

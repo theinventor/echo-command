@@ -35,7 +35,7 @@
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <% if current_user.oauth_token.nil? %>
+        <% if current_user && current_user.oauth_token.nil? %>
             <li>
               <a href="/authorize">Auth SmartThings</a>
             </li>
